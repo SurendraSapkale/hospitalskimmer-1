@@ -3,9 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
-    
+    <h3>Map hospital finder</h3>
+    <div id="map">
+
+    </div>
 </body>
+<script>
+    function initMap() {
+      var uluru = {lat: -33.868, lng: 151.209};
+      var map = new google.maps.Map(
+        document.getElementById('map'), {zoom: 4, center: uluru});
+      var marker = new google.maps.Marker({position: uluru, map: map});
+    }
+    </script>
+<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCq4UWnfm0kEgYE5nhqOVSrDT_3K6NtgyU&callback=initMap">
+
+</script>
+
+
 </html>
