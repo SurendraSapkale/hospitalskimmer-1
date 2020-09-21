@@ -19,6 +19,17 @@
         document.getElementById('map'), {zoom: 4, center: sydney});
       var marker = new google.maps.Marker({position: sydney, map: map});
     }
+
+    let = getData =() =>{
+        fetch("https://myhospitalsapi.aihw.gov.au/api/v1/caveats")
+        .then(response => response.json())
+        .then(result =>console.log(result))
+        .catch(error => console.log(error))
+    }
+
+    getData()
+    
+
     </script>
 <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCq4UWnfm0kEgYE5nhqOVSrDT_3K6NtgyU&callback=initMap">
 
