@@ -14,10 +14,10 @@
 </body>
 <script>
     function initMap() {
-      var Sydney = {lat: -33.868, lng: 151.209};
+      var sydney = {lat: -33.868, lng: 151.209};
       var map = new google.maps.Map(
-        document.getElementById('map'), {zoom: 4, center: uluru});
-      var marker = new google.maps.Marker({position: Sydney, map: map});
+        document.getElementById('map'), {zoom: 4, center: sydney});
+      var marker = new google.maps.Marker({position: sydney, map: map});
     }
     </script>
 <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCq4UWnfm0kEgYE5nhqOVSrDT_3K6NtgyU&callback=initMap">
