@@ -35,7 +35,15 @@
             console.log(data.Countries);
             const infor = data.Countries
             .map(country =>
-            {return `<p>Country name: ${country.Country}</p>`})
+            {return `
+                <div class = "details"> 
+                <p>Country name: ${country.Country}</p><br>
+                <p>Total Confirmed: ${country.TotalConfirmed}</p>
+                <p>Total Deaths: ${country.TotalDeaths}</p>
+                <p>Total Recovered: ${country.TotalRecovered}</p>
+                
+                </div>
+            `})
             document.querySelector('#datacontainer').insertAdjacentHTML("afterbegin",infor)
         })
     }
