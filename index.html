@@ -5,9 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
+    <style>
+        .datacontainer{
+            width: 100%;
+            align-items: center;
+            position: absolute;
+        }
+        .details{
+            width: 600px;
+            background-color:gainsboro;
+            
+        }
+        p{
+            font-size: 18px;
+        }
+    </style>
 </head>
 <body>
-    <h3>Map hospital finder</h3>
+    <h3>Covid status report</h3>
     <div id="map">
 
     </div>
@@ -37,7 +52,7 @@
             .map(country =>
             {return `
                 <div class = "details"> 
-                <p><b>Country name:</b> ${country.Country}</p><br>
+                <p><b>Country name:</b> ${country.Country}</p>
                 <p><b>Total Confirmed:</b> ${country.TotalConfirmed}</p>
                 <p><b>Total Deaths:</b> ${country.TotalDeaths}</p>
                 <p><b>Total Recovered:</b> ${country.TotalRecovered}</p>
