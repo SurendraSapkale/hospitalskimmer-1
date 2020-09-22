@@ -22,7 +22,8 @@
 
     let = getData =() =>{
         fetch("https://api.covid19api.com/summary")
-        .then(response => response.json())
+        .then(response => {if(!response.ok){throw Error("ERROR")}
+        response => response.json()  })
         .then(result =>console.log(result))
         .catch(error => console.log(error))
     }
