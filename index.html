@@ -32,8 +32,11 @@
           return response.json();
         })
         .then(data => {
-            console.log(data);
-            document.querySelector('#datacontainer').innerHTML ='<p>Trial text</p>'
+            console.log(data.Countries);
+            const infor = data.Countries
+            .map(country =>
+            {return `<p>Country name: ${country.Country}</p>`})
+            document.querySelector('#datacontainer').insertAdjacentHTML("afterbegin",infor)
         })
     }
 
