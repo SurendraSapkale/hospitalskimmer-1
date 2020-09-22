@@ -11,6 +11,10 @@
     <div id="map">
 
     </div>
+
+    <div id="datacontainer">
+
+    </div>
 </body>
 <script>
     function initMap() {
@@ -24,7 +28,8 @@
         fetch("https://api.covid19api.com/summary")
         .then(response => {if(!response.ok){throw Error("ERROR")}
           return response.json()})
-        .then(response =>console.log(response))
+        .then(response =>console.log(response.Countries);
+        document.querySelector('#datacontainer').innerHTML = '<p></p>')
         .catch(error => console.log(error))
     }
 
