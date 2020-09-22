@@ -37,13 +37,13 @@
             .map(country =>
             {return `
                 <div class = "details"> 
-                <p>Country name: ${country.Country}</p><br>
-                <p>Total Confirmed: ${country.TotalConfirmed}</p>
-                <p>Total Deaths: ${country.TotalDeaths}</p>
-                <p>Total Recovered: ${country.TotalRecovered}</p>
+                <p><b>Country name:</b> ${country.Country}</p><br>
+                <p><b>Total Confirmed:</b> ${country.TotalConfirmed}</p>
+                <p><b>Total Deaths:</b> ${country.TotalDeaths}</p>
+                <p><b>Total Recovered:</b> ${country.TotalRecovered}</p>
                 
                 </div>
-            `})
+            `}).join("")
             document.querySelector('#datacontainer').insertAdjacentHTML("afterbegin",infor)
         })
     }
