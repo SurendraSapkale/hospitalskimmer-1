@@ -5,8 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
+    <style>
+        .datacontainer{
+            width: 100%;
+            align-items: center;
+            position: absolute;
+        }
+        .details{
+            width: 600px;
+            background-color:gainsboro;
+            
+        }
+        p{
+            font-size: 18px;
+        }
+    </style>
 </head>
 <body>
+
     <h3>Map hospital finder</h3>
     <input
       id="pac-input"
@@ -14,7 +30,12 @@
       type="text"
       placeholder="Search Box"
     />
+
     <div id="map">
+
+    </div>
+
+    <div id="datacontainer">
 
     </div>
 </body>
@@ -83,10 +104,26 @@
 
     let = getData =() =>{
         fetch("https://api.covid19api.com/summary")
-        .then(response => {if(!response.ok){throw Error("ERROR")}
-          return response.json()})
-        .then(response =>console.log(response))
-        .catch(error => console.log(error))
+        .then(response => {if(!response.ok){
+            throw Error("ERROR");
+        }
+          return response.json();
+        })
+        .then(data => {
+            console.log(data.Countries);
+            const infor = data.Countries
+            .map(country =>
+            {return `
+                <div class = "details"> 
+                <p><b>Country name:</b> ${country.Country}</p>
+                <p><b>Total Confirmed:</b> ${country.TotalConfirmed}</p>
+                <p><b>Total Deaths:</b> ${country.TotalDeaths}</p>
+                <p><b>Total Recovered:</b> ${country.TotalRecovered}</p>
+                
+                </div>
+            `}).join("")
+            document.querySelector('#datacontainer').insertAdjacentHTML("afterbegin",infor)
+        })
     }
 
     getData()
